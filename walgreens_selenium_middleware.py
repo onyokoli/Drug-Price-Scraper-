@@ -39,7 +39,7 @@ class WalgreensSeleniumMiddleware:
         )
         
         # Short pause to ensure page is fully loaded
-        time.sleep(2)
+        time.sleep(1)
 
         # Scroll to load all products
         self.scroll_to_bottom()
@@ -53,7 +53,7 @@ class WalgreensSeleniumMiddleware:
         last_height = self.driver.execute_script("return document.body.scrollHeight")
         while True:
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            time.sleep(2)
+            time.sleep(1)
             new_height = self.driver.execute_script("return document.body.scrollHeight")
             if new_height == last_height:
                 break

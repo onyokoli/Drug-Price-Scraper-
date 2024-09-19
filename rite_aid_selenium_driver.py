@@ -31,7 +31,7 @@ class SeleniumMiddleware:
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "li.ra-item-container"))
         )
-        time.sleep(2)  # Short pause to ensure page is fully loaded
+        time.sleep(1)  # Short pause to ensure page is fully loaded
 
         # Scrape all pages by clicking the "Next" button
         while True:
@@ -49,7 +49,7 @@ class SeleniumMiddleware:
                     EC.element_to_be_clickable((By.CSS_SELECTOR, ".ra_next:not(.disabled)"))
                 )
                 next_button.click()
-                time.sleep(2)  # Short pause to allow next page to load
+                time.sleep(1)  # Short pause to allow next page to load
             except:
                 # If there's no "Next" button or it's disabled, we've reached the last page
                 break
